@@ -22,18 +22,8 @@ public class ConfigureSwaggerOptions(IApiVersionDescriptionProvider provider) : 
         var info = new OpenApiInfo
         {
             Version = description.ApiVersion.ToString(),
-            Title = "Net Core Web Api Versioning",
-            Description = "Example on how to versioning a Web Api in Net Core",
-            // Contact = new OpenApiContact
-            // {
-            //     Name = "Edson Martinez",
-            //     Email = "emz19.com@gmail.com",
-            //     Url = new Uri("https://www.linkedin.com/in/edsonmz/")
-            // },
-            // License = new OpenApiLicense
-            // {
-            //     Name = "Use under LICX"
-            // }
+            Title = "Api Version",
+            Description = "Exemplo de versionamento de Api",
         };
         
         if (description.IsDeprecated)
