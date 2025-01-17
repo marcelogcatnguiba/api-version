@@ -20,7 +20,7 @@ public static class ConfigureApiVersion
         .AddMvc(opt => 
         {
             //Default Version
-            var baseController = opt.Conventions.Controller<BaseHealthCheckController>();
+            var baseController = opt.Conventions.Controller<BaseController>();
 
             //TODO: Enviar pra um arquivo de configuracao
             baseController.HasApiVersion(new(1));
@@ -28,7 +28,7 @@ public static class ConfigureApiVersion
             var controllerTypes = Assembly
                 .GetExecutingAssembly()
                 .GetTypes()
-                .Where(t => t.IsSubclassOf(typeof(BaseHealthCheckController)) && !t.IsAbstract)
+                .Where(t => t.IsSubclassOf(typeof(BaseController)) && !t.IsAbstract)
                 .ToList();
 
             //Aplica a versao default para todas as endpoints que herdam de BaseHealth...
