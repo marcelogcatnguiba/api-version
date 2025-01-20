@@ -21,8 +21,6 @@ public static class ConfigureApiVersion
         {
             //Default Version
             var baseController = opt.Conventions.Controller<BaseController>();
-
-            //TODO: Enviar pra um arquivo de configuracao
             baseController.HasApiVersion(new(1));
 
             var controllerTypes = Assembly
@@ -36,6 +34,7 @@ public static class ConfigureApiVersion
             {
                 var convention = opt.Conventions.Controller(controller);
                 convention.HasApiVersion(new(1));
+                convention.HasApiVersion(new(2)); //Permite omitir atributo nos controller
             }
         })
         .AddApiExplorer(options =>

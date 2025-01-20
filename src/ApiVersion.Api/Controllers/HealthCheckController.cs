@@ -3,11 +3,15 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ApiVersion.Api.Controllers;
 
-[ApiVersion(2)]
-public class HealthCheckController : BaseController
+public partial class HealthCheckController : BaseController
+{
+    
+}
+
+public partial class HealthCheckController : BaseController
 {
     [HttpGet("healthcheck")]
     [MapToApiVersion(2)]
     [ProducesResponseType<string>(StatusCodes.Status200OK)]
-    public IActionResult GetApiStatus([FromQuery] string body) => Ok(new { Response = body });
+    public IActionResult GetHealthV2([FromQuery] string body) => Ok(new { Response = body });
 }
