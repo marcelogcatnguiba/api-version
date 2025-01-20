@@ -25,7 +25,7 @@ public static class ConfigureSwaggerEndpointDiscovery
 
             foreach (var group in apiVersionDescriptions.Select(x => x.GroupName))
             {
-                options.SwaggerEndpoint($"/swagger/{group}/swagger.json", $"API Microdata APS {group.ToUpperInvariant()}");
+                options.SwaggerEndpoint($"/swagger/{group}/swagger.json", $"API Version {group.ToUpperInvariant()}");
             }
         });
     }
